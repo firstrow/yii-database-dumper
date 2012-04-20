@@ -3,7 +3,7 @@
 /**
  * Creates DB dump.
  *
- * Usase:
+ * Usage:
  * <pre>
  *      Yii::import('ext.yii-database-dumper.SDatabaseDumper');
  *      $dumper = new SDatabaseDumper;
@@ -15,6 +15,7 @@
  *          file_put_contents($file.'.gz', gzencode($dumper->getDump()));
  *      else
  *          file_put_contents($file, $dumper->getDump());
+ * </pre>
  */
 class SDatabaseDumper
 {

@@ -27,8 +27,10 @@ class SDatabaseDumper
 	public function getDump()
 	{
 		ob_start();
+		echo 'SET FOREIGN_KEY_CHECKS = 0;'.PHP_EOL;
 		foreach($this->getTables() as $key=>$val)
 			$this->dumpTable($key);
+		echo 'SET FOREIGN_KEY_CHECKS = 1;'.PHP_EOL;
 		$result=ob_get_contents();
 		ob_end_clean();
 		return $result;
